@@ -1,8 +1,13 @@
 # Schedule-1-Recipe-List-GUI
 
-the mod lets you easily find the recipes for products you have discovered or favorited
+this mod lets you easily find the recipes for products you have discovered or favorited
 
-F5 to open/close then open the phone or press esc to get the mouse cursor by default the menus are minimized (helps with performance) so press the + button to expand them
+How To Use:
+Step 1.  load a save then open the pause menu with esc or open your phone so you get a mouse cursor
+Step 2. press F5 to open them menu
+Step 3. press the + next the menus to expand them ( by default the menus are minimized helps with performance )
+Step 4. select drug type then find your product or select a product from the favorites menu
+Step 5. sometimes the product you have selected has more then 1 recipe so you will be asked to select what recipe you want
 
 F6 while the menu is open to reset the menus back to the starting location (guis can go off screen)
 
