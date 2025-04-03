@@ -1,6 +1,6 @@
 # Schedule-1-Recipe-List-GUI
 
-F5 to open/close by default the menus are minimized (helps with performance) so press the + button to expand them
+F5 to open/close then open the phone or press esc to get the mouse cursor by default the menus are minimized (helps with performance) so press the + button to expand them
 
 F6 while the menu is open to reset the menus back to the starting location (guis can go off screen)
 
