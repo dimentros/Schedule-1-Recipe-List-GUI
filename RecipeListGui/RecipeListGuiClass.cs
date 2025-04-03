@@ -1,9 +1,9 @@
-﻿using Il2CppScheduleOne.ItemFramework;
+using Il2CppScheduleOne.ItemFramework;
 using Il2CppScheduleOne.Product;
 using Il2CppScheduleOne.StationFramework;
 using MelonLoader;
 using UnityEngine;
-[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.0", "Rezx")]
+[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.1", "Rezx")]
 
 namespace RecipeListGui
 {
@@ -487,8 +487,9 @@ namespace RecipeListGui
                     //Printy($"Selected Fav: {favProduct.name}");
                     _selectedBud = favProduct;
                     _hasSelectedBud = true;
-                    // clear the last ingredient list when a new product is selected.
                     _ingredientListRecipePage = null;
+                    _hasSelectedProductRecipe = false;
+                    _selectedProductRecipeIndex = 0;
                 }
 
                 index++;
@@ -551,4 +552,3 @@ namespace RecipeListGui
         */
     }
 }
-
