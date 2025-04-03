@@ -1,5 +1,7 @@
 # Schedule-1-Recipe-List-GUI
 
+the mod lets you easily find the recipes for products you have discovered or favorited
+
 F5 to open/close then open the phone or press esc to get the mouse cursor by default the menus are minimized (helps with performance) so press the + button to expand them
 
 F6 while the menu is open to reset the menus back to the starting location (guis can go off screen)
