@@ -477,8 +477,7 @@ namespace RecipeListGui
                 return;
             }
             
-            _favsListPageScrollViewVector = GUI.BeginScrollView(new Rect(55, 20, 300, 500), _favsListPageScrollViewVector, new Rect(0, 0, 300, _listOf_FavsProducts.Count * 20 + 10));
-            
+            _favsListPageScrollViewVector = GUI.BeginScrollView(new Rect(55, 20, 300, 300), _favsListPageScrollViewVector, new Rect(0, 0, 300, _listOf_FavsProducts.Count * 20 + 10));            
             int index = 0;
             foreach (var favProduct in _listOf_FavsProducts)
             {
@@ -552,3 +551,4 @@ namespace RecipeListGui
         */
     }
 }
+
