@@ -1,23 +1,19 @@
 # Schedule-1-Recipe-List-GUI
 
-this mod lets you easily find the recipes for products you have discovered or favorited
+этот мод позволяет вам легко находить рецепты продуктов, которые вы обнаружили или которые вам понравились
 
-How To Use:
+как использовать:
 
-Step 1.  load a save then open the pause menu with esc or open your phone so you get a mouse cursor
+Шаг 1. Откройте меню паузы с помощью клавиши esc или откройте свой телефон, чтобы получить доступ к курсору мыши
 
-Step 2. press F5 to open them menu
+Шаг 2. нажмите клавишу F5, чтобы открыть меню "МОДа"
 
-Step 3. press the + next the menus to expand them ( by default the menus are minimized helps with performance )
+Шаг 3. нажмите "+" рядом с меню, чтобы развернуть их (по умолчанию меню свернуты, что повышает производительность)
 
-Step 4. select drug type then find your product or select a product from the favorites menu
+Шаг 4. выберите тип продукта, затем найдите нужный продукт или выберите продукт из меню "Избранное".
 
-Step 5. sometimes the product you have selected has more then 1 recipe so you will be asked to select what recipe you want
+Шаг 5. Иногда в выбранном вами продукте содержится более 1 рецепта, поэтому вам будет предложено выбрать, какой рецепт вы хотите получить
 
-F6 while the menu is open to reset the menus back to the starting location (guis can go off screen)
+F6, пока меню открыто, чтобы вернуть меню в исходное положение (графические интерфейсы могут отключаться).
 
-on the recipe page at the bottom left there is a box you can use to resize the page
-
-this is my first time really doing anything in C# im also just bad at coding so the performance of this is probably not great if anyone wants to help improve the mod feel free to make a pull request or contact me on discord rezx1
-
-https://www.nexusmods.com/schedule1/mods/215
+на странице рецептов в левом нижнем углу есть поле, которое вы можете использовать для изменения размера страницы
