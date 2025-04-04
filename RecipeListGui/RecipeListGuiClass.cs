@@ -3,7 +3,7 @@ using Il2CppScheduleOne.Product;
 using Il2CppScheduleOne.StationFramework;
 using MelonLoader;
 using UnityEngine;
-[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.2", "Rezx")]
+[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.3", "Rezx")]
 
 namespace RecipeListGui
 {
@@ -342,6 +342,7 @@ namespace RecipeListGui
         private static bool _hasSelectedBud;
         private static ProductDefinition _selectedBud;
         private static bool _shouldMinimizeProductListPage = true;
+        private static bool _sortProductListPageByPrice = false;
         static void ProductListPage(int windowID)
         {
 
@@ -364,6 +365,7 @@ namespace RecipeListGui
                     return;
                 }
             }
+            
             
             _listOfCreatedProducts ??= GetlistOfCreatedProducts();
             if (_listOfCreatedProducts == null)
@@ -408,6 +410,11 @@ namespace RecipeListGui
                     _typeOfDrugToFilter = "";
                     _productListPageScrollViewVector = Vector2.zero;
                 }
+                //Sort button
+                if (GUI.Button(new Rect(_productListPageRect.width - 37, 49, 29, 27), "$"))
+                {
+                    _sortProductListPageByPrice = !_sortProductListPageByPrice;
+                }
             }
             
 
@@ -416,6 +423,13 @@ namespace RecipeListGui
             if (_typeOfDrugToFilter != "")
             {
                 sortedProducts = sortedProducts.Where(product => product.DrugType.ToString() == _typeOfDrugToFilter).ToList();
+                //sortedProducts = sortedProducts.Where(product => product.DrugType.ToString() == _typeOfDrugToFilter && product.MarketValue > 100).ToList(); 
+                
+            }
+
+            if (_sortProductListPageByPrice)
+            {
+                sortedProducts = sortedProducts.OrderByDescending(product => product.MarketValue).ToList();
             }
             
             _productListPageScrollViewVector = GUI.BeginScrollView(new Rect(55, 20, 300, 300), _productListPageScrollViewVector, new Rect(0, 0, 300, sortedProducts.Count * 20 + 10));
@@ -424,7 +438,7 @@ namespace RecipeListGui
             int spacer = 0;
             foreach (var createdProduct in sortedProducts)
             {
-                if (GUI.Button(new Rect(0, 20 * spacer, 200, 20), createdProduct.name))
+                if (GUI.Button(new Rect(0, 20 * spacer, 200, 20), $"{createdProduct.name} ${createdProduct.MarketValue}"))
                 {
                     //Printy($"Selected {createdProduct.name}");
                     _selectedBud = createdProduct;
@@ -445,6 +459,7 @@ namespace RecipeListGui
         private static Rect _favsListPageRect = new Rect(100, 325, 295, 55);
         private static Il2CppSystem.Collections.Generic.List<ProductDefinition>? _listOf_FavsProducts;
         private static bool _shouldMinimizeFavListPage = true;
+        private static bool _sortFavListPageByPrice = false;
         static void FavListPage(int windowID)
         {
 
@@ -469,19 +484,33 @@ namespace RecipeListGui
                     return;
                 }
             }
-            
+            //Sort button
+            if (GUI.Button(new Rect(_productListPageRect.width - 37, 20, 29, 27), "$"))
+            {
+                _sortFavListPageByPrice = !_sortFavListPageByPrice;
+            }
+
             _listOf_FavsProducts ??= GetlistOf_FavProducts();
+            
             if (_listOf_FavsProducts == null)
             {
                 //Printy("listOf_FavsProducts is null");
                 return;
             }
             
-            _favsListPageScrollViewVector = GUI.BeginScrollView(new Rect(55, 20, 300, 300), _favsListPageScrollViewVector, new Rect(0, 0, 300, _listOf_FavsProducts.Count * 20 + 10));            
-            int index = 0;
-            foreach (var favProduct in _listOf_FavsProducts)
+            var sortedFavProducts = _listOf_FavsProducts.ToArray().ToList();
+
+            if (_sortFavListPageByPrice)
             {
-                if (GUI.Button(new Rect(0, 20 * index, 200, 20), favProduct.name))
+                sortedFavProducts = sortedFavProducts.OrderByDescending(product => product.MarketValue).ToList();
+            }
+            
+            _favsListPageScrollViewVector = GUI.BeginScrollView(new Rect(55, 20, 300, 300), _favsListPageScrollViewVector, new Rect(0, 0, 300, _listOf_FavsProducts.Count * 20 + 10));       
+            
+            int spacer = 0;
+            foreach (var favProduct in sortedFavProducts)
+            {
+                if (GUI.Button(new Rect(0, 20 * spacer, 200, 20), $"{favProduct.name} ${favProduct.MarketValue}"))
                 {
                     //Printy($"Selected Fav: {favProduct.name}");
                     _selectedBud = favProduct;
@@ -491,7 +520,7 @@ namespace RecipeListGui
                     _selectedProductRecipeIndex = 0;
                 }
 
-                index++;
+                spacer++;
             }
             GUI.EndScrollView();
             GUI.DragWindow(new Rect(20, 10, 500, 500));
@@ -551,4 +580,3 @@ namespace RecipeListGui
         */
     }
 }
-
