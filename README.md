@@ -3,6 +3,7 @@
 this mod lets you easily find the recipes for products you have discovered or favorited
 
 How To Use:
+
 Step 1.  load a save then open the pause menu with esc or open your phone so you get a mouse cursor
 
 Step 2. press F5 to open them menu
