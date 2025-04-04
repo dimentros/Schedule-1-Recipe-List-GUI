@@ -3,7 +3,7 @@ using Il2CppScheduleOne.Product;
 using Il2CppScheduleOne.StationFramework;
 using MelonLoader;
 using UnityEngine;
-[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.1", "Rezx")]
+[assembly: MelonInfo(typeof(RecipeListGui.RecipeListGuiClass), "Recipe List", "1.0.2", "Rezx")]
 
 namespace RecipeListGui
 {
