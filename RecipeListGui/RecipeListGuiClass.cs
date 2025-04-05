@@ -40,14 +40,14 @@ namespace RecipeListGui
         {
             string translationFilePath = Path.Combine(MelonEnvironment.GameRootDirectory, "Mods", "Translations", "recipe_translations.txt");
 
-            Melon<RecipeListGuiClass>.Logger.Msg($"Попытка загрузить переводы из: {translationFilePath}");
+            Melon<RecipeListGuiClass>.Logger.Msg($"Attempt to download translations from: {translationFilePath}");
 
             if (File.Exists(translationFilePath))
             {
                 try
                 {
                     string[] lines = File.ReadAllLines(translationFilePath);
-                    Melon<RecipeListGuiClass>.Logger.Msg($"Прочитано {lines.Length} строк из файла переводов");
+                    Melon<RecipeListGuiClass>.Logger.Msg($"Read it {lines.Length} lines from the translation file");
 
                     foreach (string line in lines)
                     {
@@ -62,11 +62,11 @@ namespace RecipeListGui
                             _translationDictionary[key] = value;
                         }
                     }
-                    Melon<RecipeListGuiClass>.Logger.Msg($"Загружено {_translationDictionary.Count} переводов");
+                    Melon<RecipeListGuiClass>.Logger.Msg($"Uploaded {_translationDictionary.Count} translation");
                 }
                 catch (Exception ex)
                 {
-                    Melon<RecipeListGuiClass>.Logger.Error($"Ошибка при загрузке переводов: {ex.Message}");
+                    Melon<RecipeListGuiClass>.Logger.Error($"Error when uploading translations: {ex.Message}");
                 }
             }
             else
@@ -78,16 +78,16 @@ namespace RecipeListGui
                     try
                     {
                         Directory.CreateDirectory(translationDir);
-                        Melon<RecipeListGuiClass>.Logger.Msg("Создана директория для переводов. Пожалуйста, добавьте файл recipe_translations.txt в папку Mods/Translations/");
+                        Melon<RecipeListGuiClass>.Logger.Msg("A directory for translations has been created. Please add the file recipe_translations.txt to the Mods/Translations folder/");
                     }
                     catch (Exception ex)
                     {
-                        Melon<RecipeListGuiClass>.Logger.Error($"Не удалось создать директорию для переводов: {ex.Message}");
+                        Melon<RecipeListGuiClass>.Logger.Error($"Couldn't create a directory for translations: {ex.Message}");
                     }
                 }
                 else
                 {
-                    Melon<RecipeListGuiClass>.Logger.Msg("Файл переводов не найден. Пожалуйста, добавьте файл recipe_translations.txt в папку Mods/Translations/");
+                    Melon<RecipeListGuiClass>.Logger.Msg("The translation file was not found. Please add the file recipe_translations.txt to the Mods/Translations folder/");
                 }
             }
         }
