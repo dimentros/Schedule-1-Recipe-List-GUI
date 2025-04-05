@@ -1379,13 +1379,6 @@ namespace RecipeListGui
                 SaveWindowPositions();
             }
         }
-
-        /*
-        private static void Printy(string text)
-        {
-            Melon<RecipeListGuiClass>.Logger.Msg(text);
-        }
-        */
     }
 }
 
